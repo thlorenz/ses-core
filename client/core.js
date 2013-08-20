@@ -18,3 +18,5 @@ exports.init = once(function () {
 
   console.log('versions:\n ', JSON.stringify({ jquery: jquery().jquery, backbone: Backbone.VERSION, underscore: _.VERSION }));
 });
+
+console.log('--== loaded core ==--');
