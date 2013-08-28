@@ -8,6 +8,13 @@ var registerPartials = require('./register-partials');
 
 var dirs = require('../config/directories');
 
+/**
+ * Returns the html to be used as the fixture for the zuul test runner.
+ * Supply it in the zuul-config: `exports.fixture = core.testFixture`
+ * 
+ * @name fixture
+ * @function
+ */
 exports.fixture = function () {
   registerPartials(dirs.partials, 'ses-core-');
 
@@ -15,6 +22,15 @@ exports.fixture = function () {
   return Handlebars.compile(tmpl)({});
 };
 
+/**
+ * Initializes the express app with the necessary dependencies to run the zuul tests.
+ * Supply it in the zuul-config: `exports.initApp = core.testInitApp;`
+ * 
+ * @name initApp
+ * @function
+ * @param app {Object} express app
+ * @param express {Object} express server module
+ */
 exports.initApp = function (app, express) {
   app.use(express.logger('dev'));
 

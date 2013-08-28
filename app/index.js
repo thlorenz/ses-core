@@ -9,6 +9,9 @@ var testSupport = require('../utils/test-support');
 var pagesServer = require('./pages');
 var apiServer = require('./api');
 
+// For more information about the below exposed functions please review the readme or 
+// the jsdocs above the actual function definitions
+
 // utility functions
 exports.registerPartials     =  registerPartials;
 exports.registerEndpoints    =  registerEndpoints;
