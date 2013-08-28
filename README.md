@@ -1,4 +1,5 @@
 # ses-core 
+
 The core module for the see-eat-sleep application.
 
 ## API
@@ -26,7 +27,6 @@ The core module for the see-eat-sleep application.
 ```
 /**
  * Registers all partials that are exposed by this package with handlebars.
- * Note that this happens on server startup which is why sync IO is ok.
  *
  * @name exports
  * @param partialsDir {String} path that contains the partials (*.hbs) to register
@@ -79,6 +79,68 @@ The core module for the see-eat-sleep application.
  */
 ```
 
+#### Pages Server (express)
+
+##### initPages(app, express, apiServerInfo)
+
+```
+/**
+ * Initializes the express app with core functionality before the server is listening.
+ * Call this from each app that depends on core when it initializes its pages.
+ * 
+ * @name init
+ * @function
+ * @param app {Object} express app
+ * @param express {Object} express module
+ * @param apiServerInfo {Object} { address: 'server address info' }
+ */
+```
+
+##### postInitPagesapp, server, express)
+
+```
+/**
+ * Initializes the express app with core functionality after the server is listening.
+ * Call this from each app that depends on core when it post-initializes its api.
+ * 
+ * @name postInit
+ * @function
+ * @param app {Object} express app
+ * @param server {Object} espress server
+ * @param express {Object} express module
+ */
+```
+
+#### API Server (restify)
+
+##### initApi(app, restify)
+
+```
+/**
+ * Initializes the app and the restify server with core functionality before the server is listening.
+ * Call this from each app that depends on core when it initializes its api.
+ * 
+ * @name initApi
+ * @function
+ * @param app {Object} restify app
+ * @param restify {Object} restify module
+ */
+```
+
+##### postInitApi(app, server, restify)
+
+```
+/**
+ * Initializes the restify app and server with core functionality after the server is listening
+ * Call this from each app that depends on core when it post-initializes its api.
+ * 
+ * @name postInitApi
+ * @function
+ * @param app {Object} restify app
+ * @param server {Object} the restify server
+ * @param restify {Object} restify module
+ */
+```
 
 ### Test initialization
 
@@ -107,3 +169,6 @@ The core module for the see-eat-sleep application.
  */
 ```
 
+# LICENSE
+
+MIT
