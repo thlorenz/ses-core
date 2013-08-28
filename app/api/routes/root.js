@@ -2,7 +2,12 @@
 
 var go = module.exports = function (app, restify) {
   app.get('/', function (req, res) {
-    res.header('Content-Type', 'application/json');
-    res.send({ msg: 'Welcome to the see-eat-sleep - API server' });
+    var body ='<p>Welcome to the see-eat-sleep - API server</p> <p><a href="/routes">API Routes</a></p>';
+    res.writeHead(200, {
+      'Content-Length': Buffer.byteLength(body),
+      'Content-Type': 'text/html'
+    });
+    res.write(body);
+    res.end();
   });
 };
