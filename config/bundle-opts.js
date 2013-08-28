@@ -6,6 +6,6 @@
  * Supply in the appup-config: `exports.bundleOpts = core.bundleOpts;`
  *
  * @name bundleOpts
- * @Object
+ * @return {Object} 
  */
 var go = module.exports = { debug: true, insertGlobals: false };

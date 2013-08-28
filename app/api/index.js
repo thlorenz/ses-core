@@ -6,6 +6,7 @@ var logRequest = require('log-request');
 
 /**
  * Initializes the app and the restify server with core functionality before the server is listening.
+ * Call this from each app that depends on core when it initializes its api.
  * 
  * @name init
  * @function
@@ -22,6 +23,7 @@ exports.init = function (app, restify) {
 
 /**
  * Initializes the restify app and server with core functionality after the server is listening
+ * Call this from each app that depends on core when it initializes its api.
  * 
  * @name postInit
  * @function
