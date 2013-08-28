@@ -1,6 +1,28 @@
 # ses-core 
 
-The core module for the see-eat-sleep application.
+The core module for the [see-eat-sleep application](https://github.com/thlorenz/see-eat-sleep).
+
+**Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
+
+- [API](#api)
+  - [Utils](#utils)
+    - [registerEndpoints(root, dir, app, servermodule)](#registerendpointsroot-dir-app-servermodule)
+    - [registerPartials(partialsDir, prefix)](#registerpartialspartialsdir-prefix)
+    - [renderViewMiddleware(viewPath, context)](#renderviewmiddlewareviewpath-context)
+  - [App initialization](#app-initialization)
+    - [Browserify](#browserify)
+      - [initBrowserify(browserify)](#initbrowserifybrowserify)
+      - [bundleOpts](#bundleopts)
+    - [Pages Server (express)](#pages-server-express)
+      - [initPages(app, express, apiServerInfo)](#initpagesapp-express-apiserverinfo)
+      - [postInitPagesapp, server, express)](#postinitpagesapp-server-express)
+    - [API Server (restify)](#api-server-restify)
+      - [initApi(app, restify)](#initapiapp-restify)
+      - [postInitApi(app, server, restify)](#postinitapiapp-server-restify)
+  - [Test initialization](#test-initialization)
+    - [testFixture()](#testfixture)
+    - [testInitApp(app, express)](#testinitappapp-express)
+- [LICENSE](#license)
 
 ## API
 
