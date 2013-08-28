@@ -12,7 +12,7 @@ var requireAll = require('require-all');
  * @param root {String} full path to root directory
  * @param dir {String} name of subdirectory to initialize modules for
  * @param app {Object} app server instance
- * @param restify {Object} express or restify module
+ * @param servermodule {Object} express or restify module
  */
 var go = module.exports = function (root, dir, app, servermodule) {
 
